@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalContext";
 
-export const Transaction = ({ name, amount }) => {
+export const Transaction = ({ name, amount, id }) => {
+  const { deleteTransaction } = useContext(GlobalContext);
   return (
-    <li>
-      Item: {name}, Price: {amount}
-    </li>
+    <>
+      <li>
+        <div>
+          Item: {name}, Price: {amount}
+          <button onClick={() => deleteTransaction(id)}>X</button>
+        </div>
+      </li>
+    </>
   );
 };

@@ -14,22 +14,26 @@ export const TransactionForm = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <span>Item: </span>
-        <input
-          type="text"
-          value={name}
-          placeholder="Enter Item"
-          onChange={e => setName(e.target.value)}
-          required
-        />
-        <span>Amount: </span>
-        <input
-          type="number"
-          value={amount}
-          placeholder="Enter Price"
-          onChange={e => setAmount(parseInt(e.target.value))}
-          required
-        />
+        <div>
+          <span>Item: </span>
+          <input
+            type="text"
+            value={name}
+            placeholder="Enter Item"
+            onChange={e => setName(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <span>Amount: </span>
+          <input
+            type="number"
+            value={amount}
+            placeholder="Enter Price"
+            onChange={e => setAmount(parseInt(e.target.value))}
+            required
+          />
+        </div>
         <button type="submit">Submit</button>
       </form>
     </div>

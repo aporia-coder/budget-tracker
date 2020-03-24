@@ -12,7 +12,7 @@ const GlobalContextProvider = props => {
     },
     {
       name: "Headphones",
-      amount: 120,
+      amount: -120,
       id: uuid(),
     },
     {
@@ -26,8 +26,13 @@ const GlobalContextProvider = props => {
       id: uuid(),
     },
     {
-      name: "Boat",
+      name: "Salary",
       amount: 2000,
+      id: uuid(),
+    },
+    {
+      name: "Stocks",
+      amount: 1200,
       id: uuid(),
     },
   ]);
@@ -36,8 +41,16 @@ const GlobalContextProvider = props => {
     setTransactions([...transactions, { name, amount, id: uuid() }]);
   };
 
+  const deleteTransaction = id => {
+    let delArr = transactions.filter(transaction => transaction.id !== id);
+    console.log(delArr);
+    setTransactions([...delArr]);
+  };
+
   return (
-    <GlobalContext.Provider value={{ transactions, addTransaction }}>
+    <GlobalContext.Provider
+      value={{ transactions, addTransaction, deleteTransaction }}
+    >
       {props.children}
     </GlobalContext.Provider>
   );
