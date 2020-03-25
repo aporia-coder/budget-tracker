@@ -15,9 +15,13 @@ export const IncomeExpense = () => {
     .reduce((acc, curr) => (acc += curr), 0);
 
   return (
-    <>
-      <div>Income: £{income}</div>
-      <div>Expenses: £{expense}</div>
-    </>
+    <div className="container-income">
+      <div>
+        Income: <p className="income">£{income}</p>
+      </div>
+      <div>
+        Expenses: <p className="expense">£{expense}</p>
+      </div>
+    </div>
   );
 };

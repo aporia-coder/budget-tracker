@@ -6,5 +6,10 @@ export const Balance = () => {
   const prices = transactions.map(transaction => transaction.amount);
   const total = prices.reduce((acc, curr) => acc + curr, 0);
 
-  return <h2>Balance: £{total}</h2>;
+  return (
+    <div className="container-balance">
+      <p className="balance">YOUR BALANCE:</p>
+      <h2>£{total}</h2>
+    </div>
+  );
 };

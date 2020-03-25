@@ -6,6 +6,16 @@ export const TransactionList = () => {
   const { transactions } = useContext(GlobalContext);
   return (
     <div>
+      <h3
+        style={{
+          borderBottom: "1px solid rgba(10, 10, 10, 0.3)",
+          marginBottom: "1rem",
+          paddingBottom: "1rem",
+          display: "flex",
+        }}
+      >
+        Transactions:
+      </h3>
       <ul>
         {transactions.map(transaction => (
           <Transaction

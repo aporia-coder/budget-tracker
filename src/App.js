@@ -1,6 +1,5 @@
 import React from "react";
 import GlobalContextProvider from "./context/GlobalContext";
-import "./App.css";
 
 import { Header } from "./components/Header";
 import { TransactionList } from "./components/TransactionList";
@@ -10,7 +9,7 @@ import { IncomeExpense } from "./components/IncomeExpense";
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <GlobalContextProvider>
         <Header />
         <Balance />

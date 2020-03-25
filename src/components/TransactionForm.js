@@ -9,6 +9,8 @@ export const TransactionForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     addTransaction(name, amount);
+    setName("");
+    setAmount("");
   };
 
   return (
@@ -19,7 +21,7 @@ export const TransactionForm = () => {
           <input
             type="text"
             value={name}
-            placeholder="Enter Item"
+            placeholder="Enter Item..."
             onChange={e => setName(e.target.value)}
             required
           />
@@ -29,12 +31,14 @@ export const TransactionForm = () => {
           <input
             type="number"
             value={amount}
-            placeholder="Enter Price"
+            placeholder="Enter Price..."
             onChange={e => setAmount(parseInt(e.target.value))}
             required
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

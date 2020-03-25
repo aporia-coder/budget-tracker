@@ -1,1 +1,103 @@
-@import "base";
+$shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+$buttonshadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+$transition: all 0.3s ease-in-out;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  background-color: #fff;
+  margin: 10px 0;
+  box-shadow: $shadow;
+  &:hover {
+    .delete {
+      opacity: 1;
+    }
+  }
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.container {
+  width: 20rem;
+  margin: 2rem auto;
+  &-income {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: $shadow;
+    margin: 1.5rem;
+  }
+}
+
+.income {
+  color: rgb(2, 168, 2);
+  border-right: 1px solid rgba(10, 10, 10, 0.3);
+}
+
+.expense {
+  color: red;
+}
+
+.header {
+  margin: 1rem 0 2rem;
+}
+
+.balance {
+  font-weight: bold;
+}
+
+.minus {
+  border-right: 4px solid #db1818;
+}
+
+.plus {
+  border-right: 4px solid #06ca06;
+}
+
+.submit {
+  cursor: pointer;
+  padding: 1rem 5rem;
+  border-radius: 100px;
+  background-color: #1fb8ff;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  margin: 2rem;
+  transition: $transition;
+  &:hover {
+    box-shadow: $buttonshadow;
+  }
+}
+
+.delete {
+  cursor: pointer;
+  opacity: 0;
+  color: rgb(219, 24, 24);
+  font-size: 1.3rem;
+  transition: $transition;
+}
