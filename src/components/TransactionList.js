@@ -4,7 +4,9 @@ import { Transaction } from "./Transaction";
 
 export const TransactionList = () => {
   const { transactions } = useContext(GlobalContext);
-  return (
+  return transactions.length === 0 ? (
+    <h3 style={{ paddingBottom: "1rem" }}>No Transactions</h3>
+  ) : (
     <div>
       <h3
         style={{

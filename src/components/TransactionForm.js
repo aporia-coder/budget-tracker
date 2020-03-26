@@ -17,7 +17,7 @@ export const TransactionForm = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <div>
-          <span>Item: </span>
+          <p>Item: </p>
           <input
             type="text"
             value={name}
@@ -27,7 +27,7 @@ export const TransactionForm = () => {
           />
         </div>
         <div>
-          <span>Amount: </span>
+          <p>Amount: </p>
           <input
             type="number"
             value={amount}
