@@ -2,13 +2,19 @@ import React, { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 
 export const TransactionForm = () => {
-  const { addTransaction } = useContext(GlobalContext);
+  const { dispatch } = useContext(GlobalContext);
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
-    addTransaction(name, amount);
+    dispatch({
+      type: "ADD_TRANSACTION",
+      payload: {
+        name,
+        amount,
+      },
+    });
     setName("");
     setAmount("");
   };

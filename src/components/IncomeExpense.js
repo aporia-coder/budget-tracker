@@ -3,15 +3,15 @@ import { GlobalContext } from "../context/GlobalContext";
 
 export const IncomeExpense = () => {
   const { transactions } = useContext(GlobalContext);
-  const incomes = transactions.filter(transaction => transaction.amount > 0);
-  const expenses = transactions.filter(transaction => transaction.amount < 0);
 
-  const income = incomes
-    .map(income => income.amount)
+  const amounts = transactions.map(transaction => transaction.amount);
+
+  const income = amounts
+    .filter(amount => amount > 0)
     .reduce((acc, curr) => (acc += curr), 0);
 
-  const expense = expenses
-    .map(expense => expense.amount)
+  const expense = amounts
+    .filter(amount => amount < 0)
     .reduce((acc, curr) => (acc += curr), 0);
 
   return (
